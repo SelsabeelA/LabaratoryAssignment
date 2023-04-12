@@ -1,0 +1,56 @@
+body{
+    
+    	background-color: #d9d9d9;
+}
+
+h1{
+  display: block;
+  position: relative;
+
+  text-align: center;
+  font-family: cursive;
+  padding: 60px 60px;
+  margin: 0 auto;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.featuresSec {
+
+  height: 200px;
+  margin: 40px 10px;
+  box-sizing: border-box;
+  position: relative;
+  width: 30%;
+
+ 
+}
+
+div.features img{
+  display: block;
+  margin: 0 auto;
+  height:200px;
+  width: 200px;
+}
+
+.iconContent {
+  text-align: center;
+  font-size: 120%;
+  margin: 10px 0;
+  padding: 0 30px;
+  
+
+}
+
+.iconTitle {
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 140%;
+  
+}
