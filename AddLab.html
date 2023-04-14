@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="wave.css">
-    <link rel="stylesheet" href="lab.css">
-    <title>Add Labaratory</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/lab.css" />
+    <link rel="stylesheet" href="CSS/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Laboratory Website</title>
 </head>
+
 <body>
-    <nav>
-        <!-- <div class="head"> -->
-                <img src="logo.jpg" alt="">
-            <ul>
-                <li><a href="home.html" >Home</a></li>
-                <li><a href=""home.html#resaerch">resaerch</a></li>
+    
+    <div class="home">
+        <nav>
+            <img src="img/logo.jpg" alt="" />
+            <ul class="links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="home.html#resaerch">resaerch</a></li>
                 <li><a href="home.html#services">services</a></li>
                 <li><a href="home.html#about">About</a></li>
                 <li><a href="home.html#features">features</a></li>
@@ -23,121 +29,222 @@
             <div class="btn">
                 <li><a href="AddLab.html" id="button">Add Laboratory</a></li>
             </div>
+            <div class="bars">
+                <i class="fa-solid fa-bars"></i>
+            </div>
             <!-- </div> -->
-    </nav>
+        </nav>
+        <div id="ddd" class="dropdown">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#resaerch">resaerch</a></li>
+            <li><a href="#services">services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">features</a></li>
+            <li><a href="#contact">contact</a></li>
+            <div class="btn">
+                <li><a href="AddLab.html" id="button">Add Laboratory</a></li>
+            </div>
+        </div> 
+    </div>
     <!-- Body of Lab Adding -->
     <div class="con-lab">
         <div class="head">
-            <h1>Add Laboratory:</h1>
+            <h1>Add Laboratory:
+                <div class="line"></div>
+            </h1>
         </div>
-            <div class="inputs">
-                <input placeholder="Name Is Lab: " type="text" id="title">
-                <input placeholder="ID of Lab" type="text" id="idd">
-                <div class="data-Lab">
-                    <input placeholder="Building Number:" type="number" id="buildNum">
-                    <input placeholder="Floor Number:" type="number" id="floorNum">
-                    <input placeholder="Capacity:" type="number" id="capacity">
-                    <button type="submit" id="Add">Add Laboratory</button>
-                    <input placeholder="Number Of Chairs:" type="number" id="chairNum">
-                    <input placeholder="Number Of PC's:" type="number" id="pcNum">
-                    <input placeholder="Status:" type="text" id="status">
-                    <button type="submit">Add new PC</button>
+        <div class="inputs">
+            <input placeholder="Name Is Lab: " type="text" id="title" />
+            <input placeholder="ID of Lab" type="text" id="idd" />
+            <div class="data-Lab">
+                <input placeholder="Building Number:" type="number" id="buildNum" />
+                <input placeholder="Floor Number:" type="number" id="floorNum" />
+                <input placeholder="Capacity:" type="number" id="capacity" />
+                <button type="submit" id="Add">Add Laboratory</button>
+                <input placeholder="Number Of Chairs:" type="number" id="chairNum" />
+                <input placeholder="Number Of PC's:" type="number" id="pcNum" />
+                <input placeholder="Status:" type="text" id="status" />
+                <button id = "add" type="submit" onclick="AddPc()">Add new PC</button>
+                <div id="con-addlab">
+                    <h2>Add Pc</h2>
+                    <div onclick="none()" class="close">
+                        <p>X</p>
+                    </div>
+                    <input placeholder="ID OF PC:" type="number" id="idPC" />
+                    <input placeholder="ID OF  LABORATORY:" type="number" id="idlab" />
+                    <input placeholder="STATUS ACTIVEOR UNDER MAINTENANCE: " type="text" id="statusPc" />
+                    <button id = "add2" type="submit" >Add PC</button>
                 </div>
-                <div class="data-pc">
-                </div>
-                <div class="search">
-                    <input placeholder="Search" type="text" id="search">
-                    <button type="submit">Search</button>
-                </div>
-                <div class="btns">
-                    <button type="submit" id="report">report of lab</button>
-                    <button type="submit" id="delete">delete ALL</button>
-                    <button type="submit" id="list">list of PC,s</button>
+                <div class="report" id="con-addlab2">
+                    <h2>Report Of Lab</h2>
+                    <div onclick="none()" class="close">
+                        <p>X</p>
+                    </div>
+                    <input placeholder="ID OF PC:" type="number" id="idPC" />
+                    <input placeholder="ID OF  LABORATORY:" type="number" id="idlab" />
+                    <textarea placeholder="WRITE REPORT: " type="text" id="statusPc" name=""  cols="30" rows="10"></textarea>
+                    <button id = "add2" type="submit" >Report</button>
                 </div>
             </div>
-
-            <!-- /////////////////////// -->
-                <div class="outputs">
-                    <table>
-                        <tr>
-                            <th>id</th>
-                            <th>name</th>
-                            <th>building number</th>
-                            <th>floor number</th>
-                            <th>capacity</th>
-                            <th>number of pc,s</th>
-                            <th>number of chairs</th>
-                            <th>Status</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                        <tbody>
-                            <hr>
-                            <tr>
-                                <td>1</td>
-                                <td>life care</td>
-                                <td>33</td>
-                                <td>2</td>
-                                <td>20</td>
-                                <td>12</td>
-                                <td>10</td>
-                                <td>active</td>
-                                <td><button id="btnEdit">Edit</button></td>
-                                <td><button id="btnDelete">Delete</button></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>life care</td>
-                                <td>33</td>
-                                <td>2</td>
-                                <td>20</td>
-                                <td>12</td>
-                                <td>10</td>
-                                <td>active</td>
-                                <td><button id="btnEdit">Edit</button></td>
-                                <td><button id="btnDelete">Delete</button></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>life care</td>
-                                <td>33</td>
-                                <td>2</td>
-                                <td>20</td>
-                                <td>12</td>
-                                <td>10</td>
-                                <td>active</td>
-                                <td><button id="btnEdit">Edit</button></td>
-                                <td><button id="btnDelete">Delete</button></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>life care</td>
-                                <td>33</td>
-                                <td>2</td>
-                                <td>20</td>
-                                <td>12</td>
-                                <td>10</td>
-                                <td>active</td>
-                                <td><button id="btnEdit">Edit</button></td>
-                                <td><button id="btnDelete">Delete</button></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>life care</td>
-                                <td>33</td>
-                                <td>2</td>
-                                <td>20</td>
-                                <td>12</td>
-                                <td>10</td>
-                                <td>active</td>
-                                <td><button id="btnEdit">Edit</button></td>
-                                <td><button id="btnDelete">Delete</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="data-pc"></div>
+            <div class="search">
+                <input placeholder="Search" type="text" id="search" />
+                <button type="submit">Search</button>
+            </div>
+            <div class="btns">
+                <button onclick="Report()" type="submit" id="report">report of lab</button>
+                
+                <button type="submit" id="delete">delete ALL</button>
+                <button type="submit" id="list">list of PC,s</button>
+            </div>
         </div>
 
-        <script src="lab.js"></script>
+        <!-- /////////////////////// -->
+        <div class="outputs">
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>building number</th>
+                    <th>floor number</th>
+                    <th>capacity</th>
+                    <th>number of pc,s</th>
+                    <th>number of chairs</th>
+                    <th>Status</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tbody>
+                    <hr />
+                    <tr>
+                        <td>1</td>
+                        <td>life care</td>
+                        <td>33</td>
+                        <td>2</td>
+                        <td>20</td>
+                        <td>12</td>
+                        <td>10</td>
+                        <td>active</td>
+                        <td><button id="btnEdit">Edit</button></td>
+                        <td><button id="btnDelete">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>life care</td>
+                        <td>33</td>
+                        <td>2</td>
+                        <td>20</td>
+                        <td>12</td>
+                        <td>10</td>
+                        <td>active</td>
+                        <td><button id="btnEdit">Edit</button></td>
+                        <td><button id="btnDelete">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>life care</td>
+                        <td>33</td>
+                        <td>2</td>
+                        <td>20</td>
+                        <td>12</td>
+                        <td>10</td>
+                        <td>active</td>
+                        <td><button id="btnEdit">Edit</button></td>
+                        <td><button id="btnDelete">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>life care</td>
+                        <td>33</td>
+                        <td>2</td>
+                        <td>20</td>
+                        <td>12</td>
+                        <td>10</td>
+                        <td>active</td>
+                        <td><button id="btnEdit">Edit</button></td>
+                        <td><button id="btnDelete">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>life care</td>
+                        <td>33</td>
+                        <td>2</td>
+                        <td>20</td>
+                        <td>12</td>
+                        <td>10</td>
+                        <td>active</td>
+                        <td><button id="btnEdit">Edit</button></td>
+                        <td><button id="btnDelete">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>life care</td>
+                        <td>33</td>
+                        <td>2</td>
+                        <td>20</td>
+                        <td>12</td>
+                        <td>10</td>
+                        <td>active</td>
+                        <td><button id="btnEdit">Edit</button></td>
+                        <td><button id="btnDelete">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>life care</td>
+                        <td>33</td>
+                        <td>2</td>
+                        <td>20</td>
+                        <td>12</td>
+                        <td>10</td>
+                        <td>active</td>
+                        <td><button id="btnEdit">Edit</button></td>
+                        <td><button id="btnDelete">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>life care</td>
+                        <td>33</td>
+                        <td>2</td>
+                        <td>20</td>
+                        <td>12</td>
+                        <td>10</td>
+                        <td>active</td>
+                        <td><button id="btnEdit">Edit</button></td>
+                        <td><button id="btnDelete">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>life care</td>
+                        <td>33</td>
+                        <td>2</td>
+                        <td>20</td>
+                        <td>12</td>
+                        <td>10</td>
+                        <td>active</td>
+                        <td><button id="btnEdit">Edit</button></td>
+                        <td><button id="btnDelete">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>life care</td>
+                        <td>33</td>
+                        <td>2</td>
+                        <td>20</td>
+                        <td>12</td>
+                        <td>10</td>
+                        <td>active</td>
+                        <td><button id="btnEdit">Edit</button></td>
+                        <td><button id="btnDelete">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="JS/btn.js">
+    </script>
+    <script src="JS/AddPc.js">
+    </script>
 </body>
+
 </html>

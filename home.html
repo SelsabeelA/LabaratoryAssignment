@@ -2,13 +2,19 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="wave.css" /> -->
-	<link rel="stylesheet" href="services_stylesh.css" />
-    <title>Fly Care</title>
+    <!-- <link rel="stylesheet" href="CSS/main.css" /> -->
+    <!-- <link rel="stylesheet" href="lab2.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="CSS/services_stylesh-1.css">
+        <link rel="stylesheet" href="CSS/main.css">
+    <title>Wavy Animated</title>
   </head>
   <body>
     <!-- header section Start -->
@@ -16,8 +22,8 @@
     </div>
     <div class="home">
       <nav>
-          <img src="img/logo.jpg" alt="" />
-          <ul>
+        <img src="img/logo.jpg" alt="" />
+        <ul class="links">
             <li><a href="home.html">Home</a></li>
             <li><a href="#resaerch">resaerch</a></li>
             <li><a href="#services">services</a></li>
@@ -28,8 +34,23 @@
       <div class="btn">
         <li><a href="AddLab.html" id="button">Add Laboratory</a></li>
       </div>
-      <!-- </div> -->
-    </nav>
+      <div class="bars">
+        <i id="icon" class="fa-solid fa-bars"></i>
+      </div>
+      </div>
+    </div>
+  </nav>
+  <div id="ddd" onclick="barx()"class="dropdown">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="#resaerch">resaerch</a></li>
+    <li><a href="#services">services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#features">features</a></li>
+    <li><a href="#contact">contact</a></li>
+  <div class="btn">
+    <li><a href="AddLab.html" id="button">Add Laboratory</a></li>
+  </div>
+</div> 
     <div class="circle">
       <div class="text">
         <h1>
@@ -40,43 +61,44 @@
           One of the most modern devices that<br />
           have high accuracy in extracting results.
         </p>
-        <div class="btn" id="btnText">
+        <div class="bt" id="btnText">
           <li><a href="AddLab.html" id="button">Add Laboratory</a></li>
         </div>
       </div>
-      
-      <img src="img/photo_6_2023-03-03_23-00-03.jpg" alt="" />
+      <div class="imgPrev">
+        <img src="img/manlab.jpg" alt="" />
+      </div>
     </div>
-  </div>
   <!-- header section end -->
   
   <!-- Start Research -->
-  <hr>
   <div class="Research" id="resaerch">
-    <h1 class="main-header" style="text-align: center;">Reaserch</h1>
+    <h1 class="main-header">resaerch
+      <div class="line"></div>
+    </h1>
     <div class="item">
-      <img src="img/GirlLab.jpg" alt="" width="100px">
-      <p>How do you choose the right
+      <img src="img/micro.jpg" alt="" width="100px">
+      <h2>How do you choose the right
         laboratory for you based on
-        your examination?</p>
+        your examination with pro machines?</h2>
         <div class="read-more">
           <a href="#">Read More</a>
         </div>
       </div>
     <div class="item">
       <img src="img/placeLab.jpg" alt="" width="100px">
-      <p>here are steps that you must take into
+      <h2>here are steps that you must take into
         account when choosing the appropriate
-        location for yourlaboratory</p>
+        location for yourlaboratory</h2>
         <div class="read-more">
           <a href="#">Read More</a>
         </div>
       </div>
     <div class="item">
       <img src="img/ToolLab.jpg" alt="" width="100px">
-      <p>Learn about the dangers of some
+      <h2>Learn about the dangers of some
         medical tests and know how to handle
-        them with caution.</p>
+        them with caution.</h2>
         <div class="read-more">
           <a href="#">Read More</a>
         </div>
@@ -85,8 +107,10 @@
   <!-- End Research -->
 
   <!-- Start Service -->
-<div class="container">
-  <h1 class="main-header">OUR SERVICES</h1>
+<div class="containerServices">
+  <h1 class="main-header">OUR SERVICES
+    <div class="line"></div>
+  </h1>
   <div class="services" id="services">
     <div class="service">
       <img src="img/calendar.jpeg" alt="calendar photo">
@@ -127,25 +151,27 @@
 </div>
     <!-- End Service -->
 <!-- Start About Us -->
-<hr>
 <div class="about" id="about">
-  <h1 class="main-header"  style="text-align: center;" >About Us</h1>
+  <h1 class="main-header"  style="text-align: center;" >About Us
+    <div class="line"></div>
+  </h1>
     <p style="text-align: center;">Contact us and write to us if you have any questions or services
       you want us to add</p>
 
       <div class="photos"">
-        <img src="img/photo_3_2023-03-09_21-12-05.jpg" alt="" srcset=""  style="text-align: center;" width="50%">
-        <img src="img/photo_1_2023-03-09_21-12-05.jpg" alt="" srcset="" style="align-items: left;" width="50%">
-        <img src="img/photo_2_2023-03-09_21-12-05.jpg" alt="" srcset="" style="align-items: right;" width="50%">
+        <img src="img/desktop.jpg" alt="" srcset=""  style="text-align: center;" width="50%">
+        <img src="img/phone.jpg" alt="" srcset="" style="align-items: left;" width="50%">
+        <img src="img/tablet.jpg" alt="" srcset="" style="align-items: right;" width="50%">
       </div>
 </div>
 
 <!-- End About Us -->
 
 <!-- Start Features -->
-<hr>
 <div class="features" style="background-color:#d9d9d9;" id="features">
-  <h1 class="main-header" style="text-align: center;">features</h1>
+  <h1 class="main-header" style="text-align: center;">features
+    <div class="line"></div>
+  </h1>
   <div>
     <img src = "https://cdn.discordapp.com/attachments/1055472952239472683/1082348024551972885/IMG-20230303-WA0046.jpg" alt = "idea" width="200px">
     
@@ -171,9 +197,10 @@
 
 
 <!-- Start Contact Us -->
-<hr>
 <div class="contact" id="contact">
-  <h1 class="main-header" style="text-align: center; ">Contact Us</h1>
+  <h1 class="main-header" style="text-align: center; ">Contact Us
+    <div class="line"></div>
+  </h1>
   <p style="text-align: center;">Contact us and write to us if you have any questions or services
     you want us to add</p>
 
@@ -205,24 +232,25 @@
 </div>
 <!-- End Contact Us -->
 
-
 <!-- Start Footer -->
-<hr>
 <div class="footer">
   <div class="container">
       <img src="img/logo.jpg" alt="" srcset="" width="200px">
       <p>You Can Find Profisonal Here </p>
       <div class="social">
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-home"></i>
-        <i class="fab fa-linkedin"></i>
+        <i class="fab fa-facebook fa-2x"></i>
+        <i class="fab fa-twitter fa-2x"></i>
+        <i class="fab fa-whatsapp fa-2x"></i>
+        <i class="fab fa-linkedin fa-2x"></i>
       </div>
-      <p class="copyright">
-        &copy; 2023 <span>Fly Care</span> <p>All Right Reseved</p>
-      </p>
+      <div class="copyright">
+        &copy; 2023 <span id="fly">Fly Care</span> <span>All Right Reseved</span>
+      </div>
     </div>
   </div>
   <!-- End Footer -->
   </body>
+
+  <script src="JS/btn.js">
+  </script>
 </html>
