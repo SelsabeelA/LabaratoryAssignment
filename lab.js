@@ -86,31 +86,38 @@ function showTable() {
 
     let table = '';
 
+<div id = "tableName"><th>name</th></div>
+                    <th>building number</th></div>
+                    <th>floor number</th></div>
+                    <th>capacity</th></div>
+                    <th>number of pc,s</th></div>
+                    <th>number of chairs</th></div>
+                    <th>Status</th></div>
     for (let i = 0; i < labs.length; i++) {
         if(labs[i].status === "inactive") {
             table += `<tr>
-                <td>${labs[i].ID}</td>
-                <td>${labs[i].title}</td>
-                <td>${labs[i].buildNumber}</td>
-                <td>${labs[i].floorNumber}</td>
-                <td>${labs[i].capacityAmount}</td>
-                <td>${labs[i].pcNumber}</td>
-                <td>${labs[i].chairNumber}</td>
-                <td><b class = "inact" >.</b>${labs[i].status}</td>
+                <div id = "tableID"><td>${labs[i].ID}</td></div>
+                <div id = "tableName"><td>${labs[i].title}</td></div>
+                <div id = "tableBld"><td>${labs[i].buildNumber}</td></div>
+                <div id = "tableFlr"><td>${labs[i].floorNumber}</td></div>
+                <div id = "tableCp"><td>${labs[i].capacityAmount}</td></div>
+                <div id = "tablePc"><td>${labs[i].pcNumber}</td></div>
+                <div id = "tableCh"><td>${labs[i].chairNumber}</td></div>
+                <div id = "tableSt">td><b class = "inact" >.</b>${labs[i].status}</td></div>
                 <td><button id="btnEdit">Edit</button></td>
                 <td><button id="btnDelete">Delete</button></td>
         </tr>`
         }
         else{
             table += `<tr>
-            <td>${labs[i].ID}</td>
-            <td>${labs[i].title}</td>
-            <td>${labs[i].buildNumber}</td>
-            <td>${labs[i].floorNumber}</td>
-            <td>${labs[i].capacityAmount}</td>
-            <td>${labs[i].pcNumber}</td>
-            <td>${labs[i].chairNumber}</td>
-            <td><b id= "light" >.</b>${labs[i].status}</td>
+            <div id = "tableID"><td>${labs[i].ID}</td></div>
+            <div id = "tableName"><td>${labs[i].title}</td></div>
+            <div id = "tableBld"><td>${labs[i].buildNumber}</td></div>
+            <div id = "tableFlr"><td>${labs[i].floorNumber}</td></div>
+            <div id = "tableCp"><td>${labs[i].capacityAmount}</td></div>
+            <div id = "tablePc"><td>${labs[i].pcNumber}</td></div>
+            <div id = "tableCh"><td>${labs[i].chairNumber}</td></div>
+            <div id = "tableSt">td><td><b id= "light" >.</b>${labs[i].status}</td></div>
             <td><button id="btnEdit">Edit</button></td>
             <td><button id="btnDelete">Delete</button></td>
             </tr>`
@@ -132,4 +139,65 @@ del.addEventListener("click", function() {
 });
 
 showTable();
+
+
+// -------------------------------------------------------
+
+const EditButton = document.querySelector('#btnEdit');
+
+// load the data into the input boxes
+function loadInfo(){
+
+  document.getElementById("idd").disabled = true;
+  document.getElementById("title").disabled = true;
+
+  var bld = document.getElementById("tableBld").value;
+  document.getElementById("buildNum").value = bld;
+
+  var flr = document.getElementById("tableFlr").value;
+  document.getElementById("floorNum").value = flr;
+
+  var cp = document.getElementById("tableCp").value;
+  document.getElementById("capacity").value = cp;
+	
+  var ch = document.getElementById("tableCh").value;
+  document.getElementById("chairNum").value = ch;
+
+  var pc = document.getElementById("tablePc").value;
+  document.getElementById("pcNum").value = pc;
+  
+  var st = document.getElementById("tableSt").value;
+  document.getElementById("status").value = st;
+
+}
+
+//
+function removeInfo(){
+
+  document.getElementById("tableId").value = '';
+
+  document.getElementById("tableName").value = '';
+
+  document.getElementById("tablebld").value = '';
+
+  document.getElementById("tableFlr").value = '';
+
+  document.getElementById("tableCp").value = '';
+	
+  document.getElementById("tableCh").value = '';
+
+  document.getElementById("tablePc").value = '';
+  
+  document.getElementById("tableSt").value = '';
+}
+
+// Edits the data in the input feilds
+function editInfo (){
+  loadInfo(); 
+  removeInfo();
+}
+
+EditButton.addEventListener('click', function () {
+  editInfo();
+});
 
