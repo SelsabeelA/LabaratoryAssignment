@@ -151,7 +151,8 @@ function loadInfo(){
   document.getElementById("idd").disabled = true;
   document.getElementById("title").disabled = true;
 
-  var bld = document.getElementById("tableBld").value;
+  var bld = document.getElementById("tableBld").value; //to be updated
+  var bld = labs[i].buildNumber; //right one 
   document.getElementById("buildNum").value = bld;
 
   var flr = document.getElementById("tableFlr").value;
@@ -189,6 +190,20 @@ function removeInfo(){
   document.getElementById("tablePc").value = '';
   
   document.getElementById("tableSt").value = '';
+
+  for (let k = i; k < labs.length - 1; k++) {
+        
+                <td>${labs[k].ID = labs[k + 1].ID}</td></div>
+                <td>${labs[k].title = labs[k + 1].title}</td></div>
+                <td>${labs[k]buildNumber = labs[k + 1].buildNumber}</td></div>
+                <td>${labs[k].floorNumber = labs[k + 1].floorNumber}</td></div>
+                <td>${labs[k].capacityAmount = labs[k + 1].capacityAmount}</td></div>
+                <td>${labs[k].pcNumber = labs[k + 1].pcNumber}</td></div>
+                <td>${labs[k].chairNumber = labs[k + 1].hairNumber}</td></div>
+                <b class = "inact" >.</b>${labs[i].status = labs[k + 1].status}</td></div>
+                <td><button id="btnEdit">Edit</button></td>
+                <td><button id="btnDelete">Delete</button></td>
+   }
 }
 
 // Edits the data in the input feilds
