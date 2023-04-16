@@ -54,12 +54,12 @@
             </h1>
         </div>
         <div class="inputs">
-            <input placeholder="Name Is Lab: " type="text" id="title" />
+            <input  class="valid" placeholder="Name Is Lab: " type="text" id="title" />
             <input placeholder="ID of Lab" type="text" id="idd" />
             <div class="data-Lab">
-                <input placeholder="Building Number:" type="number" id="buildNum" />
-                <input placeholder="Floor Number:" type="number" id="floorNum" />
-                <input placeholder="Capacity:" type="number" id="capacity" />
+                <input class="valid" placeholder="Building Number:" type="number" id="buildNum" />
+                <input class="valid" placeholder="Floor Number:" type="number" id="floorNum" />
+                <input class="valid" placeholder="Capacity:" type="number" id="capacity" />
                 <button type="submit" id="Add">Add Laboratory</button>
                 <input placeholder="Number Of Chairs:" type="number" id="chairNum" />
                 <input placeholder="Number Of PC's:" type="number" id="pcNum" />
@@ -101,7 +101,7 @@
 
         <!-- /////////////////////// -->
         <div class="outputs">
-            <table>
+            <table >
                 <tr>
                     <th>id</th>
                     <th>name</th>
@@ -114,134 +114,16 @@
                     <th></th>
                     <th></th>
                 </tr>
-                <tbody>
-                    <hr />
-                    <tr>
-                        <td>1</td>
-                        <td>life care</td>
-                        <td>33</td>
-                        <td>2</td>
-                        <td>20</td>
-                        <td>12</td>
-                        <td>10</td>
-                        <td>active</td>
-                        <td><button id="btnEdit">Edit</button></td>
-                        <td><button id="btnDelete">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>life care</td>
-                        <td>33</td>
-                        <td>2</td>
-                        <td>20</td>
-                        <td>12</td>
-                        <td>10</td>
-                        <td>active</td>
-                        <td><button id="btnEdit">Edit</button></td>
-                        <td><button id="btnDelete">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>life care</td>
-                        <td>33</td>
-                        <td>2</td>
-                        <td>20</td>
-                        <td>12</td>
-                        <td>10</td>
-                        <td>active</td>
-                        <td><button id="btnEdit">Edit</button></td>
-                        <td><button id="btnDelete">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>life care</td>
-                        <td>33</td>
-                        <td>2</td>
-                        <td>20</td>
-                        <td>12</td>
-                        <td>10</td>
-                        <td>active</td>
-                        <td><button id="btnEdit">Edit</button></td>
-                        <td><button id="btnDelete">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>life care</td>
-                        <td>33</td>
-                        <td>2</td>
-                        <td>20</td>
-                        <td>12</td>
-                        <td>10</td>
-                        <td>active</td>
-                        <td><button id="btnEdit">Edit</button></td>
-                        <td><button id="btnDelete">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>life care</td>
-                        <td>33</td>
-                        <td>2</td>
-                        <td>20</td>
-                        <td>12</td>
-                        <td>10</td>
-                        <td>active</td>
-                        <td><button id="btnEdit">Edit</button></td>
-                        <td><button id="btnDelete">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>life care</td>
-                        <td>33</td>
-                        <td>2</td>
-                        <td>20</td>
-                        <td>12</td>
-                        <td>10</td>
-                        <td>active</td>
-                        <td><button id="btnEdit">Edit</button></td>
-                        <td><button id="btnDelete">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>life care</td>
-                        <td>33</td>
-                        <td>2</td>
-                        <td>20</td>
-                        <td>12</td>
-                        <td>10</td>
-                        <td>active</td>
-                        <td><button id="btnEdit">Edit</button></td>
-                        <td><button id="btnDelete">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>life care</td>
-                        <td>33</td>
-                        <td>2</td>
-                        <td>20</td>
-                        <td>12</td>
-                        <td>10</td>
-                        <td>active</td>
-                        <td><button id="btnEdit">Edit</button></td>
-                        <td><button id="btnDelete">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>life care</td>
-                        <td>33</td>
-                        <td>2</td>
-                        <td>20</td>
-                        <td>12</td>
-                        <td>10</td>
-                        <td>active</td>
-                        <td><button id="btnEdit">Edit</button></td>
-                        <td><button id="btnDelete">Delete</button></td>
-                    </tr>
+                <tbody id="table">
+                    <hr>
                 </tbody>
             </table>
         </div>
     </div>
 
     <script src="JS/btn.js">
+    </script>
+    <script src="JS/lab.js">
     </script>
     <script src="JS/AddPc.js">
     </script>
