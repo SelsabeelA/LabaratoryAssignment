@@ -66,16 +66,25 @@ nav {
     border: none;
     border-radius: 3px;
     padding: 3px;
+    display: none;
+}
+
+.empty {
+    outline: red;
+    border-style: solid;
+    border: red solid 1px;
+    transition: 0.3s;
+    transform: scaleX(1.02);
 }
 
 #title {
-    width: 58%;
+    width: 98%;
     height: 30px;
     outline: none;
     margin: 5px 2px;
-    border: none;
     border-radius: 3px;
     padding: 3px;
+    border: none;
 }
 
 /* #title:focus {
@@ -195,6 +204,12 @@ table td {
     font-weight: 600;
     font-size: 14px;
     color: #365b6d;
+    position: relative;
+    line-height: 1.6;
+}
+
+.act b {
+    color: red;
 }
 
 table button {
@@ -455,4 +470,21 @@ h1 .line {
     margin-right: auto;
     margin-top: 5px;
     margin-bottom: 10px;
+}
+
+
+tr b {
+    position: absolute;
+    left: 5px;
+    top: -22px;
+    color: lawngreen;
+    font-size: 35px;
+}
+
+tr .inact {
+    position: absolute;
+    left: 5px;
+    top: -22px;
+    color: red;
+    font-size: 35px;
 }
