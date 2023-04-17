@@ -89,15 +89,13 @@
             <div class="data-pc"></div>
             <div class="search">
                 <input placeholder="Search" type="text" id="search" />
-                <button type="submit">Search</button>
+                <button type="submit" onclick="searchLab()">Search</button>
             </div>
             <div class="btns">
                 <button onclick="Report()" type="submit" id="report">report of lab</button>
-                
                 <button type="submit" id="delete">delete ALL</button>
                 <button type="submit" id="list">list of PC,s</button>
             </div>
-        </div>
 
         <!-- /////////////////////// -->
         <div class="outputs">
@@ -120,6 +118,28 @@
             </table>
         </div>
     </div>
+    <!-- Add a table to display search results -->
+    <div class="results" > 
+        <table id="labTable">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>building number</th>
+                    <th>floor number</th>
+                    <th>capacity</th>
+                    <th>number of pc,s</th>
+                    <th>number of chairs</th>
+                    <th>Status</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+             
+            </tbody>
+        </table>
+    </div> 
 
     <script src="JS/btn.js">
     </script>

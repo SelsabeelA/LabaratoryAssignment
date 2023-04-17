@@ -139,7 +139,39 @@ del.addEventListener("click", function() {
 });
 
 showTable();
-
+//--------------------------------------------------
+function searchLab() {    
+    var searchTerm = document.getElementById("search").value.toLowerCase(); // Get search term from input and convert to lowercase for case-insensitive search
+    var labTable = document.getElementById("labTable");
+    var labTableBody = labTable.getElementsByTagName("tbody")[0]; // Get table body element
+    labTableBody.innerHTML = ""; // Clear existing table body
+    document.getElementById("table").disabled = true;
+    for (var i = 0; i < labs.length; i++) {
+        var labName = labs[i].title.toLowerCase() ; // Convert lab name to lowercase for case-insensitive comparison
+  
+        if (labName.includes(searchTerm)) {
+            // If lab name contains search term
+            var newRow = labTableBody.insertRow();
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+            var cell5 = newRow.insertCell(4);
+            var cell6 = newRow.insertCell(5);
+            var cell7 = newRow.insertCell(6);
+            var cell8 = newRow.insertCell(7);
+            cell1.innerHTML = labs[i].ID;
+            cell2.innerHTML = labs[i].title;
+            cell3.innerHTML = labs[i].buildNumber;
+            cell4.innerHTML = labs[i].floorNumber;
+            cell5.innerHTML = labs[i].capacityAmount;
+            cell6.innerHTML = labs[i].pcNumber;
+            cell7.innerHTML = labs[i].chairNumber;
+            cell8.innerHTML = labs[i].status;
+       
+        }
+    }
+  }
 
 // -------------------------------------------------------
 
