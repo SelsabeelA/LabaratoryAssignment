@@ -1,14 +1,14 @@
 const addLabButton = document.querySelector('#Add');
 
 
-const titleInput = document.querySelector('#title');
+let titleInput = document.querySelector('#title');
 let IDInput = 1;
-const buildInput = document.querySelector('#buildNum');
-const floorInput = document.querySelector('#floorNum');
-const capacityInput = document.querySelector('#capacity');
-const chairInput = document.querySelector('#chairNum');
-const pcInput = document.querySelector('#pcNum');
-const statusInput = document.querySelector('#status');
+let buildInput = document.querySelector('#buildNum');
+let floorInput = document.querySelector('#floorNum');
+let capacityInput = document.querySelector('#capacity');
+let chairInput = document.querySelector('#chairNum');
+let pcInput = document.querySelector('#pcNum');
+let statusInput = document.querySelector('#status');
 
 
 function validateInput() {
@@ -61,14 +61,14 @@ function addLabToLocalStorage() {
     labs.push(lab);
     localStorage.setItem("Lab", JSON.stringify(labs));
     console.log(labs);
-    // titleInput.value = '';
-    // IDInput.value = '';
-    // buildInput.value = '';
-    // floorInput.value = '';
-    // capacityInput.value = '';
-    // chairInput.value = '';
-    // pcInput.value = '';
-    // statusInput.value = '';
+    //titleInput.value = ' ';
+    //IDInput.value = ' ';
+    //buildInput.value = ' ';
+    //floorInput.value = ' ';
+    //capacityInput.value = ' ';
+    //chairInput.value = ' ';
+    //pcInput.value = ' ';
+    //statusInput.value = ' ';
 
 }
 
@@ -83,54 +83,41 @@ addLabButton.addEventListener('click', function () {
 
 
 function showTable() {
-    let table = `
-        <table>
-            <tr>
-                <th>
-                    <div id="tableName">name</div>
-                </th>
-                <th>building number</th>
-                <th>floor number</th>
-                <th>capacity</th>
-                <th>number of pc,s</th>
-                <th>number of chairs</th>
-                <th>Status</th>
-            </tr>
-    `;
+
+    let table = '';
     for (let i = 0; i < labs.length; i++) {
         if(labs[i].status === "inactive") {
             table += `<tr>
-                <td><div id="tableID">${labs[i].ID}</div></td>
-                <td><div id="tableName">${labs[i].title}</div></td>
-                <td><div id="tableBld">${labs[i].buildNumber}</div></td>
-                <td><div id="tableFlr">${labs[i].floorNumber}</div></td>
-                <td><div id="tableCp">${labs[i].capacityAmount}</div></td>
-                <td><div id="tablePc">${labs[i].pcNumber}</div></td>
-                <td><div id="tableCh">${labs[i].chairNumber}</div></td>
-                <td><div id="tableSt"><b class="inact">.</b>${labs[i].status}</div></td>
-                <td><button id="btnEdit">Edit</button></td>
-                <td><button id="btnDelete">Delete</button></td>
-            </tr>`;
+            <td>${labs[i].ID}</td>
+            <td>${labs[i].title}</td>
+            <td>${labs[i].buildNumber}</td>
+            <td>${labs[i].floorNumber}</td>
+            <td>${labs[i].capacityAmount}</td>
+            <td>${labs[i].pcNumber}</td>
+            <td>${labs[i].chairNumber}</td>
+            <td><b class = "inact" >.</b>${labs[i].status}</td>
+            <td><button id="btnEdit" data-index = "${i}">Edit</button></td>
+            <td><button id="btnDelete">Delete</button></td>
+        </tr>`
         }
         else{
             table += `<tr>
-                <td><div id="tableID">${labs[i].ID}</div></td>
-                <td><div id="tableName">${labs[i].title}</div></td>
-                <td><div id="tableBld">${labs[i].buildNumber}</div></td>
-                <td><div id="tableFlr">${labs[i].floorNumber}</div></td>
-                <td><div id="tableCp">${labs[i].capacityAmount}</div></td>
-                <td><div id="tablePc">${labs[i].pcNumber}</div></td>
-                <td><div id="tableCh">${labs[i].chairNumber}</div></td>
-                <td><div id="tableSt"><b id="light">.</b>${labs[i].status}</div></td>
-                <td><button id="btnEdit">Edit</button></td>
-                <td><button id="btnDelete">Delete</button></td>
-            </tr>`;
+            <td>${labs[i].ID}</td>
+            <td>${labs[i].title}</td>
+            <td>${labs[i].buildNumber}</td>
+            <td>${labs[i].floorNumber}</td>
+            <td>${labs[i].capacityAmount}</td>
+            <td>${labs[i].pcNumber}</td>
+            <td>${labs[i].chairNumber}</td>
+            <td><b id= "light" >.</b>${labs[i].status}</td>
+            <td><button id="btnEdit" data-index = "${i}">Edit</button></td>
+            <td><button id="btnDelete">Delete</button></td>
+            </tr>`
         }
-    }
-    table += `</table>`;
-    document.getElementById("table").innerHTML = table;
-}
 
+    document.getElementById("table").innerHTML = table;
+    }
+}
 
 let del = document.getElementById("delete");
 
@@ -169,7 +156,7 @@ function searchLab() {
             cell2.innerHTML = labs[i].title;
             cell3.innerHTML = labs[i].buildNumber;
             cell4.innerHTML = labs[i].floorNumber;
-            cell5.innerHTML = labs[i].capacityAmount;
+            cell5.innerHTML = labs[i].capacityAmount;           
             cell6.innerHTML = labs[i].pcNumber;
             cell7.innerHTML = labs[i].chairNumber;
             cell8.innerHTML = labs[i].status;
@@ -183,73 +170,66 @@ function searchLab() {
 const EditButton = document.querySelector('#btnEdit');
 
 // load the data into the input boxes
-function loadInfo(){
-
-  document.getElementById("idd").disabled = true;
-  document.getElementById("title").disabled = true;
-
-  var bld = document.getElementById("tableBld").value; //to be updated
-  var bld = labs[i].buildNumber; //right one 
-  document.getElementById("buildNum").value = bld;
-
-  var flr = document.getElementById("tableFlr").value;
-  document.getElementById("floorNum").value = flr;
-
-  var cp = document.getElementById("tableCp").value;
-  document.getElementById("capacity").value = cp;
-	
-  var ch = document.getElementById("tableCh").value;
-  document.getElementById("chairNum").value = ch;
-
-  var pc = document.getElementById("tablePc").value;
-  document.getElementById("pcNum").value = pc;
+function loadInfo(index){
   
-  var st = document.getElementById("tableSt").value;
-  document.getElementById("status").value = st;
+  document.getElementById("title").value = labs[index].title;
+  document.getElementById("title").disabled = true;
+  
+  document.getElementById("buildNum").value  = labs[index].buildNumber;
 
+  document.getElementById("floorNum").value = labs[index].floorNumber;
+
+  document.getElementById("capacity").value = labs[index].capacityAmount;
+	
+  document.getElementById("pcNum").value = labs[index].pcNumber;
+
+  document.getElementById("chairNum").value = labs[index].chairNumber;
+  
+  document.getElementById("status").value = labs[index].status;
 }
 
-//
-function removeInfo(){
+// //Removes editable row
+function removeInfo(index){
 
-  document.getElementById("tableId").value = '';
+ labs[index].buildNumber = ' ';
 
-  document.getElementById("tableName").value = '';
+labs[index].floorNumber = ' ';
 
-  document.getElementById("tablebld").value = '';
+labs[index].capacityAmount = ' ';
 
-  document.getElementById("tableFlr").value = '';
+labs[index].pcNumber = ' ';
 
-  document.getElementById("tableCp").value = '';
+ labs[index].chairNumber = ' ';
 	
-  document.getElementById("tableCh").value = '';
+labs[index].status = ' ';
 
-  document.getElementById("tablePc").value = '';
+labs[index].title = ' ';
   
-  document.getElementById("tableSt").value = '';
+labs[index].ID = ' ';
 
-  for (let k = i; k < labs.length - 1; k++) {
+   for (let k = index; k < labs.length - 1; k++) {
         
-                <td>${labs[k].ID = labs[k + 1].ID}</td></div>
-                <td>${labs[k].title = labs[k + 1].title}</td></div>
-                <td>${labs[k]buildNumber = labs[k + 1].buildNumber}</td></div>
-                <td>${labs[k].floorNumber = labs[k + 1].floorNumber}</td></div>
-                <td>${labs[k].capacityAmount = labs[k + 1].capacityAmount}</td></div>
-                <td>${labs[k].pcNumber = labs[k + 1].pcNumber}</td></div>
-                <td>${labs[k].chairNumber = labs[k + 1].hairNumber}</td></div>
-                <b class = "inact" >.</b>${labs[i].status = labs[k + 1].status}</td></div>
-                <td><button id="btnEdit">Edit</button></td>
-                <td><button id="btnDelete">Delete</button></td>
+    {labs[k].ID = labs[k + 1].ID}
+    {labs[k].title = labs[k + 1].title}
+    {labs[k].buildNumber = labs[k + 1].buildNumber}
+    {labs[k].floorNumber = labs[k + 1].floorNumber}
+    {labs[k].capacityAmount = labs[k + 1].capacityAmount}
+    {labs[k].pcNumber = labs[k + 1].pcNumber}
+    {labs[k].chairNumber = labs[k + 1].chairNumber}
+    {labs[k].status = labs[k + 1].status}
+    
    }
+  showTable();
 }
 
 // Edits the data in the input feilds
-function editInfo (){
-  loadInfo(); 
-  removeInfo();
+function editInfo (index){
+  loadInfo(index); 
+  removeInfo(index);
 }
 
 EditButton.addEventListener('click', function () {
-  editInfo();
+  var index = parseInt(this.getAttribute('data-index'));
+  editInfo(index);
+  alert(index);
 });
-
