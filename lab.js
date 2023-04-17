@@ -85,27 +85,19 @@ addLabButton.addEventListener('click', function () {
 function showTable() {
 
     let table = '';
-
-<div id = "tableName"><th>name</th></div>
-                    <th>building number</th></div>
-                    <th>floor number</th></div>
-                    <th>capacity</th></div>
-                    <th>number of pc,s</th></div>
-                    <th>number of chairs</th></div>
-                    <th>Status</th></div>
     for (let i = 0; i < labs.length; i++) {
         if(labs[i].status === "inactive") {
             table += `<tr>
-                <div id = "tableID"><td>${labs[i].ID}</td></div>
-                <div id = "tableName"><td>${labs[i].title}</td></div>
-                <div id = "tableBld"><td>${labs[i].buildNumber}</td></div>
-                <div id = "tableFlr"><td>${labs[i].floorNumber}</td></div>
-                <div id = "tableCp"><td>${labs[i].capacityAmount}</td></div>
-                <div id = "tablePc"><td>${labs[i].pcNumber}</td></div>
-                <div id = "tableCh"><td>${labs[i].chairNumber}</td></div>
-                <div id = "tableSt">td><b class = "inact" >.</b>${labs[i].status}</td></div>
-                <td><button id="btnEdit">Edit</button></td>
-                <td><button id="btnDelete">Delete</button></td>
+            <div id = "tableID"><td>${labs[i].ID}</td></div>
+            <div id = "tableName"><td>${labs[i].title}</td></div>
+            <div id = "tableBld"><td>${labs[i].buildNumber}</td></div>
+            <div id = "tableFlr"><td>${labs[i].floorNumber}</td></div>
+            <div id = "tableCp"><td>${labs[i].capacityAmount}</td></div>
+            <div id = "tablePc"><td>${labs[i].pcNumber}</td></div>
+            <div id = "tableCh"><td>${labs[i].chairNumber}</td></div>
+            <div id = "tableSt"><td><b class = "inact" >.</b>${labs[i].status}</td></div>
+            <td><button id="btnEdit">Edit</button></td>
+            <td><button id="btnDelete">Delete</button></td>
         </tr>`
         }
         else{
@@ -117,7 +109,7 @@ function showTable() {
             <div id = "tableCp"><td>${labs[i].capacityAmount}</td></div>
             <div id = "tablePc"><td>${labs[i].pcNumber}</td></div>
             <div id = "tableCh"><td>${labs[i].chairNumber}</td></div>
-            <div id = "tableSt">td><td><b id= "light" >.</b>${labs[i].status}</td></div>
+            <div id = "tableSt"><td><b id= "light" >.</b>${labs[i].status}</td></div>
             <td><button id="btnEdit">Edit</button></td>
             <td><button id="btnDelete">Delete</button></td>
             </tr>`
@@ -204,7 +196,7 @@ function loadInfo(){
 
 }
 
-//
+//Removes editable row
 function removeInfo(){
 
   document.getElementById("tableId").value = '';
@@ -225,16 +217,15 @@ function removeInfo(){
 
   for (let k = i; k < labs.length - 1; k++) {
         
-                <td>${labs[k].ID = labs[k + 1].ID}</td></div>
-                <td>${labs[k].title = labs[k + 1].title}</td></div>
-                <td>${labs[k]buildNumber = labs[k + 1].buildNumber}</td></div>
-                <td>${labs[k].floorNumber = labs[k + 1].floorNumber}</td></div>
-                <td>${labs[k].capacityAmount = labs[k + 1].capacityAmount}</td></div>
-                <td>${labs[k].pcNumber = labs[k + 1].pcNumber}</td></div>
-                <td>${labs[k].chairNumber = labs[k + 1].hairNumber}</td></div>
-                <b class = "inact" >.</b>${labs[i].status = labs[k + 1].status}</td></div>
-                <td><button id="btnEdit">Edit</button></td>
-                <td><button id="btnDelete">Delete</button></td>
+    {labs[k].ID = labs[k + 1].ID}
+    {labs[k].title = labs[k + 1].title}
+    {labs[k].buildNumber = labs[k + 1].buildNumber}
+    {labs[k].floorNumber = labs[k + 1].floorNumber}
+    {labs[k].capacityAmount = labs[k + 1].capacityAmount}
+    {labs[k].pcNumber = labs[k + 1].pcNumber}
+    {labs[k].chairNumber = labs[k + 1].hairNumber}
+    {labs[i].status = labs[k + 1].status}
+    
    }
 }
 
