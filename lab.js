@@ -1,14 +1,14 @@
 const addLabButton = document.querySelector('#Add');
 
 
-const titleInput = document.querySelector('#title');
+let titleInput = document.querySelector('#title');
 let IDInput = 1;
-const buildInput = document.querySelector('#buildNum');
-const floorInput = document.querySelector('#floorNum');
-const capacityInput = document.querySelector('#capacity');
-const chairInput = document.querySelector('#chairNum');
-const pcInput = document.querySelector('#pcNum');
-const statusInput = document.querySelector('#status');
+let buildInput = document.querySelector('#buildNum');
+let floorInput = document.querySelector('#floorNum');
+let capacityInput = document.querySelector('#capacity');
+let chairInput = document.querySelector('#chairNum');
+let pcInput = document.querySelector('#pcNum');
+let statusInput = document.querySelector('#status');
 
 
 function validateInput() {
@@ -61,14 +61,14 @@ function addLabToLocalStorage() {
     labs.push(lab);
     localStorage.setItem("Lab", JSON.stringify(labs));
     console.log(labs);
-    // titleInput.value = '';
-    // IDInput.value = '';
-    // buildInput.value = '';
-    // floorInput.value = '';
-    // capacityInput.value = '';
-    // chairInput.value = '';
-    // pcInput.value = '';
-    // statusInput.value = '';
+    titleInput.value = ' ';
+    IDInput.value = ' ';
+    buildInput.value = ' ';
+    floorInput.value = ' ';
+    capacityInput.value = ' ';
+    chairInput.value = ' ';
+    pcInput.value = ' ';
+    statusInput.value = ' ';
 
 }
 
@@ -88,29 +88,29 @@ function showTable() {
     for (let i = 0; i < labs.length; i++) {
         if(labs[i].status === "inactive") {
             table += `<tr>
-            <div id = "tableID"><td>${labs[i].ID}</td></div>
-            <div id = "tableName"><td>${labs[i].title}</td></div>
-            <div id = "tableBld"><td>${labs[i].buildNumber}</td></div>
-            <div id = "tableFlr"><td>${labs[i].floorNumber}</td></div>
-            <div id = "tableCp"><td>${labs[i].capacityAmount}</td></div>
-            <div id = "tablePc"><td>${labs[i].pcNumber}</td></div>
-            <div id = "tableCh"><td>${labs[i].chairNumber}</td></div>
-            <div id = "tableSt"><td><b class = "inact" >.</b>${labs[i].status}</td></div>
-            <td><button id="btnEdit" data-index = "${i}>Edit</button></td>
+            <td>${labs[i].ID}</td>
+            <td>${labs[i].title}</td>
+            <td>${labs[i].buildNumber}</td>
+            <td>${labs[i].floorNumber}</td>
+            <td>${labs[i].capacityAmount}</td>
+            <td>${labs[i].pcNumber}</td>
+            <td>${labs[i].chairNumber}</td>
+            <td><b class = "inact" >.</b>${labs[i].status}</td>
+            <td><button id="btnEdit" data-index = "${i}">Edit</button></td>
             <td><button id="btnDelete">Delete</button></td>
         </tr>`
         }
         else{
             table += `<tr>
-            <div id = "tableID"><td>${labs[i].ID}</td></div>
-            <div id = "tableName"><td>${labs[i].title}</td></div>
-            <div id = "tableBld"><td>${labs[i].buildNumber}</td></div>
-            <div id = "tableFlr"><td>${labs[i].floorNumber}</td></div>
-            <div id = "tableCp"><td>${labs[i].capacityAmount}</td></div>
-            <div id = "tablePc"><td>${labs[i].pcNumber}</td></div>
-            <div id = "tableCh"><td>${labs[i].chairNumber}</td></div>
-            <div id = "tableSt"><td><b id= "light" >.</b>${labs[i].status}</td></div>
-            <td><button id="btnEdit" data-index = "${i}>Edit</button></td>
+            <td>${labs[i].ID}</td>
+            <td>${labs[i].title}</td>
+            <td>${labs[i].buildNumber}</td>
+            <td>${labs[i].floorNumber}</td>
+            <td>${labs[i].capacityAmount}</td>
+            <td>${labs[i].pcNumber}</td>
+            <td>${labs[i].chairNumber}</td>
+            td><b id= "light" >.</b>${labs[i].status}</td>
+            <td><button id="btnEdit" data-index = "${i}">Edit</button></td>
             <td><button id="btnDelete">Delete</button></td>
             </tr>`
         }
@@ -156,7 +156,7 @@ function searchLab() {
             cell2.innerHTML = labs[i].title;
             cell3.innerHTML = labs[i].buildNumber;
             cell4.innerHTML = labs[i].floorNumber;
-            cell5.innerHTML = labs[i].capacityAmount;
+            cell5.innerHTML = labs[i].capacityAmount;           
             cell6.innerHTML = labs[i].pcNumber;
             cell7.innerHTML = labs[i].chairNumber;
             cell8.innerHTML = labs[i].status;
@@ -191,21 +191,21 @@ function loadInfo(index){
 // //Removes editable row
 function removeInfo(index){
 
-// //   document.getElementById("tableId").value = '';
+ labs[index].buildNumber = ' ';
 
-// //   document.getElementById("tableName").value = '';
+labs[index].floorNumber = ' ';
 
-// //   document.getElementById("tablebld").value = '';
+labs[index].capacityAmount = ' ';
 
-// //   document.getElementById("tableFlr").value = '';
+labs[index].pcNumber = ' ';
 
-// //   document.getElementById("tableCp").value = '';
+ labs[index].chairNumber = ' ';
 	
-// //   document.getElementById("tableCh").value = '';
+labs[index].status = ' ';
 
-// //   document.getElementById("tablePc").value = '';
+labs[index].title = ' ';
   
-// //   document.getElementById("tableSt").value = '';
+labs[index].ID = ' ';
 
    for (let k = index; k < labs.length - 1; k++) {
         
@@ -233,5 +233,3 @@ EditButton.addEventListener('click', function () {
   editInfo(index);
   alert(index);
 });
-
-
