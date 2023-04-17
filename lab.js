@@ -96,7 +96,7 @@ function showTable() {
             <div id = "tablePc"><td>${labs[i].pcNumber}</td></div>
             <div id = "tableCh"><td>${labs[i].chairNumber}</td></div>
             <div id = "tableSt"><td><b class = "inact" >.</b>${labs[i].status}</td></div>
-            <td><button id="btnEdit">Edit</button></td>
+            <td><button id="btnEdit" data-index = "${i}>Edit</button></td>
             <td><button id="btnDelete">Delete</button></td>
         </tr>`
         }
@@ -110,7 +110,7 @@ function showTable() {
             <div id = "tablePc"><td>${labs[i].pcNumber}</td></div>
             <div id = "tableCh"><td>${labs[i].chairNumber}</td></div>
             <div id = "tableSt"><td><b id= "light" >.</b>${labs[i].status}</td></div>
-            <td><button id="btnEdit" onclick = "editInfo();">Edit</button></td>
+            <td><button id="btnEdit" data-index = "${i}>Edit</button></td>
             <td><button id="btnDelete">Delete</button></td>
             </tr>`
         }
@@ -170,52 +170,44 @@ function searchLab() {
 const EditButton = document.querySelector('#btnEdit');
 
 // load the data into the input boxes
-function loadInfo(){
-
-  document.getElementById("idd").disabled = true;
-  document.getElementById("title").disabled = true;
-
-  var bld = document.getElementById("tableBld").value; //to be updated
-  var bld = labs[i].buildNumber; //right one 
-  document.getElementById("buildNum").value = bld;
-
-  var flr = document.getElementById("tableFlr").value;
-  document.getElementById("floorNum").value = flr;
-
-  var cp = document.getElementById("tableCp").value;
-  document.getElementById("capacity").value = cp;
-	
-  var ch = document.getElementById("tableCh").value;
-  document.getElementById("chairNum").value = ch;
-
-  var pc = document.getElementById("tablePc").value;
-  document.getElementById("pcNum").value = pc;
+function loadInfo(index){
   
-  var st = document.getElementById("tableSt").value;
-  document.getElementById("status").value = st;
+  document.getElementById("title").value = labs[index].title;
+  document.getElementById("title").disabled = true;
+  
+  document.getElementById("buildNum").value  = labs[index].buildNumber;
 
+  document.getElementById("floorNum").value = labs[index].floorNumber;
+
+  document.getElementById("capacity").value = labs[index].capacityAmount;
+	
+  document.getElementById("pcNum").value = labs[index].pcNumber;
+
+  document.getElementById("chairNum").value = labs[index].chairNumber;
+  
+  document.getElementById("status").value = labs[index].status;
 }
 
-//Removes editable row
-function removeInfo(){
+// //Removes editable row
+function removeInfo(index){
 
-  document.getElementById("tableId").value = '';
+// //   document.getElementById("tableId").value = '';
 
-  document.getElementById("tableName").value = '';
+// //   document.getElementById("tableName").value = '';
 
-  document.getElementById("tablebld").value = '';
+// //   document.getElementById("tablebld").value = '';
 
-  document.getElementById("tableFlr").value = '';
+// //   document.getElementById("tableFlr").value = '';
 
-  document.getElementById("tableCp").value = '';
+// //   document.getElementById("tableCp").value = '';
 	
-  document.getElementById("tableCh").value = '';
+// //   document.getElementById("tableCh").value = '';
 
-  document.getElementById("tablePc").value = '';
+// //   document.getElementById("tablePc").value = '';
   
-  document.getElementById("tableSt").value = '';
+// //   document.getElementById("tableSt").value = '';
 
-  for (let k = i; k < labs.length - 1; k++) {
+   for (let k = index; k < labs.length - 1; k++) {
         
     {labs[k].ID = labs[k + 1].ID}
     {labs[k].title = labs[k + 1].title}
@@ -223,19 +215,23 @@ function removeInfo(){
     {labs[k].floorNumber = labs[k + 1].floorNumber}
     {labs[k].capacityAmount = labs[k + 1].capacityAmount}
     {labs[k].pcNumber = labs[k + 1].pcNumber}
-    {labs[k].chairNumber = labs[k + 1].hairNumber}
-    {labs[i].status = labs[k + 1].status}
+    {labs[k].chairNumber = labs[k + 1].chairNumber}
+    {labs[k].status = labs[k + 1].status}
     
    }
+  showTable();
 }
 
 // Edits the data in the input feilds
-function editInfo (){
-  loadInfo(); 
-  removeInfo();
+function editInfo (index){
+  loadInfo(index); 
+  removeInfo(index);
 }
 
-/*EditButton.addEventListener('click', function () {
-  editInfo();
-});*/
+EditButton.addEventListener('click', function () {
+  var index = parseInt(this.getAttribute('data-index'));
+  editInfo(index);
+  alert(index);
+});
+
 
