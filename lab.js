@@ -109,7 +109,7 @@ function showTable() {
             <td>${labs[i].capacityAmount}</td>
             <td>${labs[i].pcNumber}</td>
             <td>${labs[i].chairNumber}</td>
-            td><b id= "light" >.</b>${labs[i].status}</td>
+            <td><b id= "light" >.</b>${labs[i].status}</td>
             <td><button id="btnEdit" data-index = "${i}">Edit</button></td>
             <td><button id="btnDelete">Delete</button></td>
             </tr>`
