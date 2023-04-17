@@ -1,46 +1,68 @@
 /* Basic reset */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 
+{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 /* Header styles */
 header {
-    background-color: #38b6ff;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    justify-content: center;
+background-color: #023e8a;
+color: white;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem;
+justify-content: center;
+}
+
+.logo {
+width: 50px;
+height: 50px;
 }
 
 /* Main styles */
 main {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
+padding: 2rem;
+max-width: 800px;
+margin: 0 auto;
+background-color: #f2f2f2;
 }
 
 h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+font-size: 1.5rem;
+margin-bottom: 1rem;
 }
 
 /* Footer styles */
 footer {
-    background-color: #38b6ff;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+background-color: #023e8a;
+color: white;
+text-align: center;
+padding: 1rem;
+position: absolute;
+bottom: 0;
+width: 100%;
 }
 
 a {
-    text-decoration: none;
-    color: #50b2f0;
+text-decoration: none;
+color: #50b2f0;
+}
+
+/* University logo */
+.logo {
+background-image: url("https://upload.wikimedia.org/wikipedia/en/b/b9/Cairo_University_Crest.png");
+background-size: contain;
+background-repeat: no-repeat;
+margin-right: 1rem;
+}
+
+body {
+  background-image: url('https://i.pinimg.com/originals/1b/25/aa/1b25aaa6ff75a82fc450ff9fbfb0b78c.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8; /* adjust the opacity to your liking */
 }
