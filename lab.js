@@ -110,7 +110,7 @@ function showTable() {
             <div id = "tablePc"><td>${labs[i].pcNumber}</td></div>
             <div id = "tableCh"><td>${labs[i].chairNumber}</td></div>
             <div id = "tableSt"><td><b id= "light" >.</b>${labs[i].status}</td></div>
-            <td><button id="btnEdit">Edit</button></td>
+            <td><button id="btnEdit" onclick = "editInfo();">Edit</button></td>
             <td><button id="btnDelete">Delete</button></td>
             </tr>`
         }
@@ -235,7 +235,7 @@ function editInfo (){
   removeInfo();
 }
 
-EditButton.addEventListener('click', function () {
+/*EditButton.addEventListener('click', function () {
   editInfo();
-});
+});*/
 
