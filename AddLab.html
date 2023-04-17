@@ -20,11 +20,11 @@
             <img src="img/logo.jpg" alt="" />
             <ul class="links">
                 <li><a href="home.html">Home</a></li>
-                <li><a href="home.html#resaerch">resaerch</a></li>
-                <li><a href="home.html#services">services</a></li>
+                <li><a href="home.html#resaerch">Research</a></li>
+                <li><a href="home.html#services">Services</a></li>
                 <li><a href="home.html#about">About</a></li>
-                <li><a href="home.html#features">features</a></li>
-                <li><a href="home.html#contact">contact</a></li>
+                <li><a href="home.html#features">Features</a></li>
+                <li><a href="home.html#contact">Contact Us</a></li>
             </ul>
             <div class="btn">
                 <li><a href="AddLab.html" id="button">Add Laboratory</a></li>
@@ -36,11 +36,11 @@
         </nav>
         <div id="ddd" class="dropdown">
             <li><a href="home.html">Home</a></li>
-            <li><a href="#resaerch">resaerch</a></li>
-            <li><a href="#services">services</a></li>
+            <li><a href="#resaerch">Research</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#features">features</a></li>
-            <li><a href="#contact">contact</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact Us</a></li>
             <div class="btn">
                 <li><a href="AddLab.html" id="button">Add Laboratory</a></li>
             </div>
@@ -63,7 +63,10 @@
                 <button type="submit" id="Add">Add Laboratory</button>
                 <input placeholder="Number Of Chairs:" type="number" id="chairNum" />
                 <input placeholder="Number Of PC's:" type="number" id="pcNum" />
-                <input placeholder="Status:" type="text" id="status" />
+                <select id="status">
+					<option value="active">Active</option>
+					<option value="not active">Not Active</option>
+			    </select>
                 <button id = "add" type="submit" onclick="AddPc()">Add new PC</button>
                 <div id="con-addlab">
                     <h2>Add Pc</h2>
